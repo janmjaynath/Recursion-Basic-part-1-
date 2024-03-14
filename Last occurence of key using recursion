@@ -1,0 +1,21 @@
+public class Recursion{
+    public static int lastoccurence(int arr[],int key,int i){
+        int index = 0;
+        if(i == arr.length){
+            return -1;
+        }
+        int isfind = lastoccurence(arr, key, i+1);
+        if(isfind != -1){
+            return isfind;
+        }
+        if(arr[i] == key){
+            index = i;
+        
+        }
+        return index;
+    }
+    public static void main(String args[]){
+    int arr[] = {1,2,3,4,5,6,5};
+        System.out.println(lastoccurence(arr, 5, 0));
+}
+}
