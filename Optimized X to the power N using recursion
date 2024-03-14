@@ -1,0 +1,22 @@
+public class Recursion {
+    
+    
+    public static int optPower(int x, int n) {
+        if(n == 0){
+            return 1;
+        }
+        int halfpower = optPower(x,n/2);
+        int halfpowersq = halfpower*halfpower;
+
+        if(n % 2 != 0){
+            halfpowersq = x * halfpowersq;
+        }
+
+        return halfpowersq;
+    }
+    public static void main(String[] args) {
+        int x = 2;
+        int n = 4;
+        System.out.println(optPower(x,n));
+    }
+}
